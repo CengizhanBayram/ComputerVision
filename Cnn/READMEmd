@@ -1,0 +1,67 @@
+# CNN (Convolutional Neural Network - Konvolüsyonel Sinir Ağı) Nedir?
+
+**CNN (Convolutional Neural Network - Konvolüsyonel Sinir Ağı)**, özellikle görüntü işlemede çok başarılı olan bir derin öğrenme modelidir. CNN'ler, derin öğrenme ağlarının bir alt kümesidir ve görüntü sınıflandırma, nesne algılama, yüz tanıma ve birçok diğer uygulamada yaygın olarak kullanılır. CNN’lerin nasıl çalıştığını, mimarisini ve kullanım alanlarını detaylı bir şekilde inceleyelim.
+
+## 1. CNN'nin Temel Bileşenleri
+
+### a. Konvolüsyonel Katmanlar (Convolutional Layers)
+- Bu katmanlar, görüntü üzerinde küçük pencereler (filtreler veya çekirdekler) hareket ettirerek özellik çıkarımı yapar.
+- Her filtre, giriş görüntüsündeki belirli bir özelliği (kenarlar, köşeler, dokular vb.) algılar.
+- Filtreler, görüntü üzerinde kayarak konvolüsyon işlemi gerçekleştirir ve bu işlemin sonucunda bir özellik haritası (feature map) oluşturur.
+
+### b. Aktivasyon Fonksiyonları
+- Konvolüsyonel katmanlar sonrası genellikle doğrusal olmayan bir aktivasyon fonksiyonu (örneğin ReLU - Rectified Linear Unit) uygulanır.
+- Bu, modelin doğrusal olmayan karmaşık ilişkileri öğrenmesine yardımcı olur.
+
+### c. Alt Örnekleme (Pooling) Katmanları
+- Alt örnekleme (örneğin, maksimum havuzlama veya ortalama havuzlama), özellik haritasının boyutlarını azaltır.
+- Bu katmanlar, ağın hesaplama yükünü azaltır ve görüntüdeki özelliklerin translasyon invariance (yer değişimine karşı dayanıklılık) özelliklerini sağlar.
+
+### d. Tam Bağlantılı (Fully Connected) Katmanlar
+- Bu katmanlar, CNN'nin son aşamalarında yer alır ve sınıflandırma işlemi için kullanılır.
+- Girişten gelen her nöron, bir sonraki katmandaki tüm nöronlara bağlanır, bu sayede derin bir özellik öğrenme gerçekleştirilir.
+
+## 2. CNN'nin Çalışma Prensibi
+
+1. **Girdi Alımı:** CNN, genellikle bir görüntü girişi alır. Bu görüntü, piksel değerlerinden oluşan bir matristir.
+2. **Konvolüsyon İşlemi:** Konvolüsyonel katmanlar, giriş görüntüsü üzerinde filtrelerle kaydırmalı bir şekilde dolaşır ve her filtre için bir özellik haritası oluşturur.
+3. **Aktivasyon Fonksiyonu Uygulaması:** Konvolüsyon işlemi sonrası doğrusal olmayan bir aktivasyon fonksiyonu uygulanır.
+4. **Alt Örnekleme:** Pooling katmanları, özellik haritalarının boyutunu azaltır ve önemli bilgileri korurken gürültüyü azaltır.
+5. **Tam Bağlantılı Katmanlar:** Özellik haritaları, tam bağlantılı katmanlara geçirilir ve burada sınıflandırma yapılır.
+
+## 3. CNN Mimarileri ve Modelleri
+
+Çeşitli CNN mimarileri, belirli görevler için optimize edilmiştir. Bazı popüler CNN mimarileri şunlardır:
+
+- **LeNet:** İlk dönem CNN'lerden biridir, el yazısı rakamların tanınmasında kullanılmıştır.
+- **AlexNet:** 2012'de ImageNet yarışmasını kazanan bu model, derin öğrenmenin popülaritesini artırmıştır.
+- **VGGNet:** Derin katmanlı yapısı ile dikkat çeker. 16-19 katmana sahip olup, daha derin modellerin performansını gösterir.
+- **ResNet:** 50 veya daha fazla katmana sahip olabilir, residual connections (artık bağlantılar) kullanarak daha derin ağların eğitilmesini sağlar.
+- **Inception:** Farklı boyutlardaki filtreleri aynı anda kullanarak ağın genişlemesini ve daha geniş bir özellik yelpazesi öğrenmesini sağlar.
+
+## 4. CNN'nin Avantajları ve Dezavantajları
+
+### Avantajları
+- **Otomatik Özellik Çıkarımı:** Elle özellik çıkarımı yapmadan, görüntüdeki önemli özellikleri otomatik olarak öğrenir.
+- **Yerel Bağlantılar:** Görüntüdeki yerel özellikleri etkili bir şekilde öğrenir.
+- **Ölçeklenebilirlik:** Derin katmanlar ekleyerek performans artırılabilir.
+
+### Dezavantajları
+- **Yüksek Hesaplama Gereksinimi:** Derin modellerin eğitimi için büyük hesaplama kaynakları gerekebilir.
+- **Büyük Veri Seti İhtiyacı:** Genellikle büyük veri setleri gerektirir, bu da veri toplama ve etiketleme süreçlerini zorlaştırabilir.
+
+## 5. CNN'nin Kullanım Alanları
+
+- **Görüntü Sınıflandırma:** Görüntüleri belirli sınıflara ayırma (örneğin, köpek mi kedi mi?).
+- **Nesne Algılama:** Görüntü içinde belirli nesneleri tanıma ve konumlandırma.
+- **Yüz Tanıma:** Bireyleri yüzlerinden tanıma.
+- **Tıbbi Görüntüleme:** Hastalık tespiti ve teşhisi için medikal görüntü analizi.
+- **Doğal Dil İşleme:** Metin ve ses verilerinin işlenmesinde CNN mimarileri kullanılabilir.
+
+## Sonuç
+
+CNN'ler, özellikle görüntü işlemede etkili bir şekilde kullanılan güçlü bir derin öğrenme tekniğidir. Otomatik özellik çıkarımı yaparak, çeşitli alanlarda yüksek doğruluklu tahminler ve sınıflandırmalar yapabilir. Ancak, yüksek hesaplama gücü gerektirmesi ve büyük veri setlerine ihtiyaç duyması gibi bazı dezavantajları da bulunmaktadır. Bu sebeple, uygun hesaplama altyapısı ve yeterli veri ile çalışılması önemlidir.
+
+Eğer CNN'ler hakkında daha fazla bilgi edinmek veya belirli bir uygulama alanına yönelik detaylı bilgi almak isterseniz, size yardımcı olmaktan memnuniyet duyarım!
+
+
