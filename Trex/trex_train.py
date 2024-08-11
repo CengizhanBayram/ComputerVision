@@ -14,7 +14,8 @@ warnings.filterwarnings("ignore")
 imgs = glob.glob("./img_nihai/*.png")
 
 ArithmeticError(
-    )width = 125
+    )
+width = 125
 height = 50
 
 X = []
